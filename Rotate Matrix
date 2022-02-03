@@ -1,0 +1,42 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<"Hello World";
+    vector<vector<int>>v; 
+    v =  {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int csize=v[0].size();
+    int rsize=v.size();
+    for(int c=0;c<csize;c++)
+    {
+        int i=0,j=rsize-1;
+        while(i<j)
+        {
+            swap(v[i++][c],v[j--][c]);
+        }
+    }
+    for(int i=0;i<rsize;i++)
+    {
+        for(int j=0;j<csize;j++)
+        {
+            if(j>i)
+            {
+                swap(v[i][j],v[j][i]);
+            }
+        }
+    }
+    
+        for(int i=0;i<rsize;i++)
+    {
+        for(int j=0;j<csize;j++)
+        {
+          cout<<v[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    
+
+
+    return 0;
+}
