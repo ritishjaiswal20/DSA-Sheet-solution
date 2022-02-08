@@ -1,0 +1,39 @@
+#include <iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+int count(vector<int>v)
+{  
+   int n=v.size();
+  int count=0;
+  int set=v[0];
+  for(int i=0;i<v.size();i++)
+  {
+      if(count==0)
+      {
+          set=v[i];
+      }
+      if(v[i]==set)
+      {
+          count++;
+      }
+      else
+      {
+          count--;
+      }
+  }
+ return set;
+}
+int main()
+{  
+    vector<int> v;
+    int x;
+    for(int i=0;i<7;i++)
+    {
+        cin>>x;
+        v.push_back(x);
+    }
+    cout<<endl;
+    cout<<count(v);
+    return 0;
+}
