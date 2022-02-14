@@ -28,6 +28,7 @@ vector<vector<int>> foursum(vector<int> a,int target)
                  else
                  {
                         vector<int>s;
+                     
                         s.push_back(a[i]);
                         s.push_back(a[j]);
                         s.push_back(a[front]);
