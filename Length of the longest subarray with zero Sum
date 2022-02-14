@@ -11,13 +11,13 @@ int main()
     map<int,int>lenMap;
     int sum=0;
     int i=-1;
-    lenMap.insert({{-1,0}});
+    lenMap.insert({{0,-1}});
     int mlen=0;
     while(i<5-1)
     {
         i++;
         sum+=a[i];
-        if(lenMap.contains(sum)==true)
+        if(lenMap.find(sum)!=lenMap.end())
         {
             int len=i-lenMap.find(sum);
             if(len>mlen)
@@ -27,7 +27,7 @@ int main()
         }
         else
         {
-                 lenMap.insert({{i,sum}});
+                 lenMap.insert({{sum,i}});
         }
     }
     cout<<mlen;
