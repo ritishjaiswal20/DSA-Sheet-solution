@@ -47,6 +47,8 @@ vector<vector<int>> foursum(vector<int> a,int target)
              while(j+1<n && a[j]==a[j+1])
              {
                  j++;
+                 
+                 
              }
              
          }
