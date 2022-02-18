@@ -58,7 +58,18 @@ void create2()
 void merge(node*p, node*q)
 {
     node *r;
-
+     if(p==NULL|| q==NULL)
+       {
+           
+           if(p!=NULL)
+           {
+               return p;
+           }
+           else
+           {
+               return q;
+           }
+       }
     if(p->data< q->data)
     {
         r=p;
