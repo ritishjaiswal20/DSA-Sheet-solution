@@ -1,6 +1,5 @@
 #include <iostream>
 #include<bits/stdc++.h>
-
 using namespace std;
 vector<vector<int>> foursum(vector<int> a,int target)
 {
@@ -48,7 +47,6 @@ vector<vector<int>> foursum(vector<int> a,int target)
              {
                  j++;
                  
-                 
              }
              
          }
@@ -62,7 +60,7 @@ vector<vector<int>> foursum(vector<int> a,int target)
 int main()
 {
     
-    vector<int> v{1,0,-1,0,-2,2};
+    vector<int> v{1,0,-1,0,-3,2};
     
     vector<vector<int>> sum=foursum(v,0);
     cout<<"The unique quadruplets are"<<endl;
