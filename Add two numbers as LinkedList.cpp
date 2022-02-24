@@ -64,7 +64,7 @@ void add(node*r, node*q)
 
 void display()
 { 
-    
+    int y;
     cout<<"hey buddy";
     node*p= third;
     while(p)
