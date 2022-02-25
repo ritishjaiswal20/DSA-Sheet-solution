@@ -1,0 +1,29 @@
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+  int V = 49;
+  vector < int > ans;
+  vector<int> a;
+  a= {1, 2, 5, 10, 20, 50, 100, 500, 1000};
+  int n = 49;
+ int N=9;
+   sort(a.begin(),a.end());
+    int res=0;
+    for(int i=N-1;i>=0;i--)
+    {
+        if(a[i]<=n)
+        {
+            int c=n/a[i];
+            res=res+c;
+            n=n-c*a[i];
+        }
+        if(n==0)
+        {
+            break;
+        }
+        
+    }
+    cout<<res;
+}
