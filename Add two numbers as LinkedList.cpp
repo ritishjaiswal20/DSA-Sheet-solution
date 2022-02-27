@@ -29,6 +29,7 @@ void add(node*r, node*q)
         t->data= sum%10;
         t->next=0;
         p->next=t;
+        int p;
         p=t;
         r=r->next;
         q=q->next;
