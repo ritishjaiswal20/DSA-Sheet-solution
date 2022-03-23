@@ -17,7 +17,7 @@ void add(node*r, node*q)
     p->data=sum %10;
     int carry=sum/10;
     p->next=0;
-    
+    int x=0;
      r=r->next;
      q=q->next;
     while(r && q)
