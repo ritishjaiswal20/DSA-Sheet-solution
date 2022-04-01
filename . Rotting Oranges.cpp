@@ -10,7 +10,7 @@ public:
                 if(grid[i][j] == 2) rotten.push({i, j});
             }
         }
-        
+        int x;
         int dx[4] = {0, 0, 1, -1};
         int dy[4] = {1, -1, 0, 0};
         
