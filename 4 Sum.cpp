@@ -4,6 +4,7 @@ using namespace std;
 vector<vector<int>> foursum(vector<int> a,int target)
 {
     int n=a.size();
+int y;
     vector<vector<int>>ans;
     sort(a.begin(),a.end());
     int sum=0;
