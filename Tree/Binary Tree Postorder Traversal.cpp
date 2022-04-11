@@ -1,3 +1,27 @@
+  void po(TreeNode* t,vector<int>&ans)
+    {
+        if(!t)
+        {
+            return;
+        }
+        po(t->left,ans);
+        po(t->right,ans);
+    ans.push_back(t->val);
+        
+        
+    }
+    vector<int> postorderTraversal(TreeNode* t) {
+
+        vector<int>a;
+        stack<TreeNode*> st;
+        po(t,a);
+        return a;
+    }
+   
+
+
+
+//eroor code 
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* t) {
