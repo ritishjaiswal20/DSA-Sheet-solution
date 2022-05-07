@@ -15,6 +15,7 @@ private:
 public:
     
     void pushall(TreeNode* root){
+   int x;
         while(root)
         {
             st.push(root);
