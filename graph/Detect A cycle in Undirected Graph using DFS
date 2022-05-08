@@ -1,0 +1,28 @@
+class Solution {
+  public:
+
+    bool df(int i,int par,vector<int>adj[],vector<int>&vis)
+     {
+          vis[i]=1;
+          for(auto it:adj[i])
+          {
+              if(!vis[it])
+              {
+                 if( df(it,i,adj,vis)==true)return true;
+              }
+              else if(it!=par)
+              {
+                  return true;
+              }
+          }
+          return false;
+         
+     }
+    bool isCycle(int V, vector<int> adj[])
+    {
+   
+        vector<int>vis(V,0);
+        return df(0,-1,adj,vis);
+
+    }
+};
