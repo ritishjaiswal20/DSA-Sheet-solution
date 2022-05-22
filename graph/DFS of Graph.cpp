@@ -13,7 +13,7 @@ class Solution {
           }
          
      }
-    vector<int> dfsOfGraph(int v, vector<int> adj[]https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1) {
+    vector<int> dfsOfGraph(int v, vector<int> adj[]) {
         // Code her   
         vector<int>storedfs;
         vector<int>vis(v,0);
