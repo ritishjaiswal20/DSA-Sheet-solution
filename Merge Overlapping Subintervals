@@ -40,3 +40,30 @@ int main()
 
     return 0;
 }
+//2nd method
+
+
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        vector<vector<int> > mergeAns;
+
+sort(intervals.begin(),intervals.end());
+
+vector pr=intervals[0];
+for(int i=1;i<intervals.size();i++)
+{
+if(intervals[i][0]<=pr[1])
+{
+pr[1]=max(pr[1],intervals[i][1]);
+}
+else
+{
+mergeAns.push_back(pr);
+pr=intervals[i];
+}
+}
+mergeAns.push_back(pr);
+return mergeAns;
+    }
+};
