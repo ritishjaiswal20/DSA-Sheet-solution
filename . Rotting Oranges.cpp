@@ -29,7 +29,7 @@ public:
             }
             if(!rotten.empty()) days++;
         }
-        
+        int y;
         return tot == cnt ? days : -1;
     }
 };
