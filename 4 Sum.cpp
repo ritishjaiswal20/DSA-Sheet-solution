@@ -57,6 +57,7 @@ int y;
              }
     }
     return ans;
+    int x;
 }
 int main()
 {
