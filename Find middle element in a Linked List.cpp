@@ -32,7 +32,7 @@ void findmiddle()
 {
     node* slow=first;
     node* fast=first;
-    while(slow && fast->next)
+    while(fast && fast->next)
     {
         slow=slow->next;
         fast=fast->next->next;
