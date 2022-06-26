@@ -20,6 +20,7 @@ void add(node*r, node*q)
     int x=0;
      r=r->next;
      q=q->next;
+    int x;
     while(r && q)
     {
         
