@@ -1,30 +1,30 @@
-int myAtoi(string s) {
-        int n=s.size();
-        if(s.empty()){ // Checking the empty string
-            return 0;
-        }
-        int sign=1,i=0;
-        while(s[i]==' ' && i<n){ //Removing Whitespaces from starting
-            i++;
-        }
+// int myAtoi(string s) {
+//         int n=s.size();
+//         if(s.empty()){ // Checking the empty string
+//             return 0;
+//         }
+//         int sign=1,i=0;
+//         while(s[i]==' ' && i<n){ //Removing Whitespaces from starting
+//             i++;
+//         }
         
-        if(i==n) return 0; //Only contains whitespaces
+//         if(i==n) return 0; //Only contains whitespaces
         
-        if(s[i]=='-'){ //For checking sign
-            sign=-1;
-            i++;
-        }
-        else if(s[i]=='+'){
-            i++;
-        }
+//         if(s[i]=='-'){ //For checking sign
+//             sign=-1;
+//             i++;
+//         }
+//         else if(s[i]=='+'){
+//             i++;
+//         }
         
-        long int out=0;
+//         long int out=0;
         
-        while(s[i] >= '0' && s[i] <= '9'){  //Checking the range
-            out*=10;
-            if(out>=INT_MAX || out<=INT_MIN) break;
-            out=out+s[i]-'0';
-            i++;
+//         while(s[i] >= '0' && s[i] <= '9'){  //Checking the range
+//             out*=10;
+//             if(out>=INT_MAX || out<=INT_MIN) break;
+//             out=out+s[i]-'0';
+//             i++;
             
         }
         
