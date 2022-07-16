@@ -25,3 +25,20 @@ public:
 
     }
 };
+
+
+
+class Solution {
+public:
+    bool issame(TreeNode*p,TreeNode* q)
+    {
+        if(p==NULL || q==NULL)
+        {
+            return p==q;
+        }
+        return (p->val==q->val) && issame(p->right,q->left) && issame(p->left,q->right);
+    }
+    bool isSymmetric(TreeNode* root) {
+        return issame(root->left,root->right);
+    }
+};
