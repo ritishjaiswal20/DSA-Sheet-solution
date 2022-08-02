@@ -1,3 +1,6 @@
+
+/*  Function which returns the  root of 
+    the flattened linked list. */
     Node* merge(Node* list1, Node* list2) {
         Node *r,*p,*q,*head;
         p=list1;
@@ -16,14 +19,14 @@
         {
                 r=p;
                 head=r;
-                p=p->next;
+                p=p->bottom;
                
         }
         else
         {
             r=q;
              head=r;
-            q=q->next;
+            q=q->bottom;
           
         }
         
@@ -31,44 +34,42 @@
         {
             if(p->data<q->data)
             {
-                r->next=p;
+                r->bottom=p;
                 r=p;
-                p=p->next;
+                p=p->bottom;
             }
             else
             {
-                r->next=q;
+                r->bottom=q;
                 r=q;
-                q=q->next;
+                q=q->bottom;
             }
           
         }
         while(p)
         {
-            r->next=p;
+            r->bottom=p;
             r=p;
-            p=p->next;
+            p=p->bottom;
         }
           while(q)
         {
-            r->next=q;
+            r->bottom=q;
                           r=q;
 
-            q=q->next;
+            q=q->bottom;
         }
         return head;
     }
 Node *flatten(Node *root)
 {  
-    if(root==NULL)
-    {
-        return NULL;
-    }
-    Node*p,*q;
-    p=root;
-    p->next=NULL;
-    q=flatten(root->next);
-    Node*ans= merge(p,q);
-    return ans;
+      if (root == NULL || root->next == NULL) 
+            return root; 
+  
+        // recur for list on right 
+        root->next = flatten(root->next); 
+  
+        // now merge 
+        root = merge(root, root->next); 
+      return root;
 }
-
