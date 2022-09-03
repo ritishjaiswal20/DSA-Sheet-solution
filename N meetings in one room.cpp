@@ -1,49 +1,46 @@
 
-#include <iostream>
-#include <bits/stdc++.h>
-class me{
-    public:
-    int pos;
-    int st;
-    int ed;
-};
-using namespace std;
-  bool static comparator( me m1, me m2) {
-         if (m1.ed < m2.ed) return true;
-         else if (m1.ed > m2.ed) return false;
-         else if (m1.pos < m2.pos) return true;
-         return false;
-      }
-void maxMeet(int s[],int e[],int n)
+class Solution
 {
-    me m[n];
-    for(int i=0;i<n;i++)
+    class met{
+    public:
+    int start;
+    int end;
+    int pos;
+};
+    public:
+    //Function to find the maximum number of meetings that can
+    //be performed in a meeting room.
+    bool static comp(met m1,met m2)
     {
-        m[i].st=s[i];
-        m[i].ed=e[i];
-        m[i].pos=i+1;
+    // if (m1.end < m2.end) return true;
+        //  else if (m1.end > m2.end) return false;
+        //  else if (m1.pos < m2.pos) return true;
+        //  return false;
+         return m1.end<m2.end;
+        //if true the pair does not need to swap
     }
-    sort(m,m+n,comparator);
-    int limit=m[0].ed;
-    vector<int> ans;
-    ans.push_back(m[0].pos);
-    for(int i=1;i<n;i++)
+    int maxMeetings(int start[], int end[], int n)
     {
-        if(m[i].st>=m[i-1].ed)
+        // Your code here
+        met m[n];
+        for(int i=0;i<n;i++)
         {
-            ans.push_back(m[i].pos);
+            m[i].start=start[i];
+            m[i].end=end[i];
+            m[i].pos=i;
         }
+        sort(m,m+n,comp);
+        int res=1;
+        int endlimit=m[0].end;
+        for(int i=1;i<n;i++)
+        {
+            if(m[i].start>endlimit)
+            {
+                res++;
+                endlimit=m[i].end;
+            }
+        }
+        return res;
+        
     }
-    for(int i=0;i<ans.size();i++)
-    {
-        cout<<ans[i]<<" ";
-    }
-}
-int main() {
- 
-   int n = 6;
-   int start[] = {1,3,0,5,8,5};
-   int end[] = {2,4,5,7,9,9};
-   maxMeet(start, end, n);
-   return 0;
-}
+};
